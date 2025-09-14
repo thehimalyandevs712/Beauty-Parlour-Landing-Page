@@ -1,11 +1,10 @@
 import React from 'react';
-import './Header.css';
+import '../Header/Header.css';
 
 const Header = () => (
   <header className="header">
     <div className="header-logo">
-      <span className="header-logo-icon">◉</span>
-      <span className="header-logo-text">Your Logo</span>
+      <img src="/SeemaSalonLogo.jpg" alt="Seema Salon Logo" className="header-logo-img" />
     </div>
     <nav className="header-nav">
       <a href="/" className="header-link header-link-active">Home</a>

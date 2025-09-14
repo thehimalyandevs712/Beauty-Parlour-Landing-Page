@@ -1,0 +1,123 @@
+/* Overall container */
+.skintab-container {
+  padding: 3rem;
+  background-color: #f5f7fa;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+/* Main title */
+.skintab-main-title {
+  text-align: center;
+  font-size: 3rem;
+  color: #37474f; /* Dark Grayish Blue */
+  margin-bottom: 3rem;
+}
+
+/* Main Services Grid */
+.skintab-main-services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+.skintab-main-service-card {
+  background: #607d8b; /* Muted Blue Gray */
+  color: #eceff1;
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.skintab-main-service-card:hover {
+  transform: translateY(-10px);
+}
+
+.skintab-main-service-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1rem;
+}
+
+.skintab-main-service-name {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+/* Detailed service cards */
+.skintab-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.skintab-detail-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  padding: 2rem;
+}
+
+.skintab-detail-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.skintab-detail-title {
+  font-size: 2rem;
+  color: #455a64; /* Dark Blue Gray */
+  margin-bottom: 1rem;
+}
+
+.skintab-detail-description {
+  font-size: 1.15rem;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.skintab-detail-types-heading {
+  font-size: 1.7rem;
+  color: #546e7a; /* Medium Gray Blue */
+  margin-bottom: 1rem;
+}
+
+.skintab-detail-types-list {
+  padding-left: 1.5rem;
+}
+
+.skintab-detail-type-item {
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .skintab-main-title {
+    font-size: 2.5rem;
+  }
+
+  .skintab-main-service-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .skintab-detail-image {
+    height: 200px;
+  }
+
+  .skintab-detail-title {
+    font-size: 1.7rem;
+  }
+
+  .skintab-detail-types-heading {
+    font-size: 1.4rem;
+  }
+}

@@ -1,48 +1,10 @@
-// Home.jsx or wherever this component is used
+// Home.jsx
 import React from 'react';
-import './Home.css';
+import "../Home/Home.css"
 import { Outlet } from 'react-router-dom';
-
-const OurServices = ({ services }) => (
-  <section className="services-container" id="our-services">
-    <h2 className="services-heading">Our Services</h2>
-    <div className="services-grid">
-      {services.map(({ category, iconSrc, alt }) => (
-        <div key={category} className="service-card">
-          <div className="service-icon">
-            <img src={iconSrc} alt={alt} />
-          </div>
-          <h3 className="service-category">{category}</h3>
-        </div>
-      ))}
-    </div>
-  </section>
-);
+import OurServices from '../OurServices/OurServices';
 
 const Home = () => {
-  const services = [
-    {
-      category: "Hair Care & Styling",
-      iconSrc: "/HairCareImage.jpg", // update with actual paths to images
-      alt: "Hair icon",
-    },
-    {
-      category: "Skin Care Solutions",
-      iconSrc: "/SkinCareImage.jpg",
-      alt: "Skin icon",
-    },
-    {
-      category: "Nails & Manicure",
-      iconSrc: "/NailsImage.jpg",
-      alt: "Nails icon",
-    },
-    {
-      category: "Makeup Artistry",
-      iconSrc: "/MakeUpImage.jpg",
-      alt: "Makeup icon",
-    },
-  ];
-
   return (
     <>
       <section className="home-container" id="home">
@@ -65,7 +27,10 @@ const Home = () => {
           <h4 className="home-subheading">Welcome to Seema Beauty Salon</h4>
           <h1 className="home-title">Unleash Your Radiance</h1>
           <p className="home-desc">
-            At Seema Beauty Salon, we offer professional haircuts, styling, skincare treatments, and more to help you look and feel your best every day.
+            You deserve to look and feel your best.
+            <br></br>
+            We combine expert care, creative style, and a seamless digital experience to help you shine, inside and out.
+            Because your confidence is our passion.
           </p>
           <form className="home-form">
             <input type="email" className="home-form-input" placeholder="Search Here....." />
@@ -85,8 +50,7 @@ const Home = () => {
 
         <Outlet />
       </section>
-
-      <OurServices services={services} />
+      <OurServices></OurServices>
     </>
   );
 };

@@ -1,0 +1,281 @@
+/* Animations and scrolling */
+@keyframes scroll-left {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.scroll-text {
+  animation: scroll-left 45s linear infinite;
+  white-space: nowrap;
+}
+
+.scroll-text-reverse {
+  animation: scroll-left 45s linear infinite reverse;
+  white-space: nowrap;
+}
+
+/* Base styles */
+.app-container {
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #FAF7F5, #F5F1ED); /* Soft off-white gradient */
+  color: #3B2F2F; /* Soft dark brown for general text */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+/* Header styles */
+.header {
+  text-align: center;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .header {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+.header-title {
+  font-weight: 800;
+  color: #5A4230; /* Warm Dark Brown */
+  line-height: 1.1;
+  letter-spacing: -0.05em;
+  font-size: 3rem;
+}
+
+@media (min-width: 768px) {
+  .header-title {
+    font-size: 3.75rem;
+  }
+}
+
+.header-subtitle {
+  margin-top: 1rem;
+  font-weight: 500;
+  color: #A1B084; /* Soft Olive Green */
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .header-subtitle {
+    font-size: 1.5rem;
+  }
+}
+
+/* Services scrolling text container */
+.scroll-container-top {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Scrolling text style */
+.scroll-text {
+  display: flex;
+  gap: 3rem;
+  padding: 1rem 0;
+  font-weight: 600;
+  color: #D8A7B1; /* Muted Pastel Pink */
+  font-size: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .scroll-text {
+    font-size: 1.875rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .scroll-text {
+    font-size: 2.25rem;
+  }
+}
+
+/* Main container */
+.main-container {
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.5rem 1.5rem 3rem;
+}
+
+@media (min-width: 768px) {
+  .main-container {
+    padding: 3rem 3rem 3rem;
+  }
+}
+
+/* Services grid */
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+}
+
+@media (min-width: 768px) {
+  .services-grid {
+    gap: 4rem;
+  }
+}
+
+/* Each service card */
+.service-card {
+  max-width: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+.service-image {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 9999px;
+  object-fit: cover;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  margin-bottom: 1rem;
+  transition: transform 0.5s ease;
+}
+
+.service-image:hover {
+  transform: scale(1.05) rotate(2deg);
+}
+
+@media (min-width: 768px) {
+  .service-image {
+    width: 16rem;
+    height: 16rem;
+  }
+}
+
+/* Service name style */
+.service-name {
+  font-weight: 700;
+  color: #5A4230; /* Warm brown */
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* Service description */
+.service-description {
+  color: #6B6256; /* Muted Gray Brown */
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  max-width: 38rem;
+}
+
+/* Testimonials section */
+.testimonial-section {
+  background-color: #F5F1ED; /* Light neutral beige */
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.testimonial-header {
+  text-align: center;
+  font-weight: 800;
+  color: #5A4230; /* Warm brown */
+  font-size: 2.25rem;
+  margin-bottom: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .testimonial-header {
+    font-size: 3rem;
+  }
+}
+
+.testimonial-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .testimonial-grid {
+    gap: 3rem;
+  }
+}
+
+.testimonial-card {
+  max-width: 24rem;
+  background-color: #FFFFFF; /* Clean white background */
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.testimonial-card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0,0,0,0.15), 0 10px 10px -5px rgba(0,0,0,0.1);
+  transform: translateY(-4px);
+}
+
+.testimonial-header-flex {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.testimonial-image {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 9999px;
+  object-fit: cover;
+  margin-right: 1rem;
+}
+
+.testimonial-name {
+  font-weight: 600;
+  color: #A1B084; /* Olive green */
+  font-size: 1.125rem;
+}
+
+.testimonial-quote {
+  color: #3B2F2F; /* Dark brown */
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* Bottom scrolling container */
+.scroll-container-bottom {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.scroll-text-reverse {
+  display: flex;
+  gap: 3rem;
+  padding: 1rem 0;
+  font-weight: 600; 
+  color: #D8A7B1; /* Pastel Pink */
+  font-size: 1.25rem;
+  animation-play-state: running;
+}
+
+@media (min-width: 768px) {
+  .scroll-text-reverse {
+    font-size: 1.875rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .scroll-text-reverse {
+    font-size: 2.25rem;
+  }
+}

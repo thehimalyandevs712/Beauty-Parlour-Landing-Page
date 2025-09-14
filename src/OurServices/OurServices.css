@@ -1,0 +1,116 @@
+
+/*********************** 
+ OUR SERVICE CONTAINER
+************************/
+
+.services-container {
+  padding: 2rem;
+  background: #fff; /* or a subtle background matching your theme */
+  text-align: center;
+}
+
+.services-heading {
+  font-size: 2.5rem;
+  color: var(--primary-color, #000);
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  /* Animation */
+  animation: glowPulse 3s ease-in-out infinite;
+  text-align: center;
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    text-shadow: 0 0 5px #d4af37, 0 0 10px #d4af37;
+    color: var(--primary-color, #000);
+  }
+  50% {
+    text-shadow: 0 0 20px #ffd700, 0 0 30px #ffd700;
+    color: #b8860b; /* darker gold */
+  }
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.service-card {
+  background-color: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 2.5rem 2rem; /* adjusted padding */
+  box-shadow: 0 0 10px rgb(0 0 0 / 0.05);
+  transition: transform 0.3s ease;
+  min-height: 200px; /* ensures balanced card height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgb(0 0 0 / 0.1);
+}
+
+.service-icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+}
+
+.service-icon img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgb(212 175 55 / 0.4); /* subtle gold glow */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  background-color: #fff; /* background for contrast */
+  padding: 8px; /* space around image */
+}
+
+.service-icon img:hover,
+.service-card:hover .service-icon img {
+  transform: scale(1.12);
+  box-shadow: 0 8px 20px rgb(212 175 55 / 0.75); /* stronger glow on hover */
+  cursor: pointer;
+}
+/* OurServices.css */
+
+/* Remove default link styles */
+.service-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block; /* Ensures the entire card is clickable */
+}
+
+
+.service-category {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text-primary, #333);
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .services-heading {
+    font-size: 2rem;
+  }
+
+  .service-card {
+    padding: 2rem;
+    min-height: 160px;
+  }
+
+  .service-icon img {
+    width: 120px;
+    height: 120px;
+  }
+}
