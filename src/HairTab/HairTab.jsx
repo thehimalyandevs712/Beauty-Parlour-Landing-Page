@@ -18,7 +18,7 @@ const services = [
   {
     name: 'Botox Nano Plastica Hair Service',
     description: 'Our advanced Botox Nano Plastica Hair Treatment is a revolutionary solution designed to deeply repair and rejuvenate damaged, brittle, or lifeless hair. Combining the power of Botox and Nano Plastica technology, this treatment penetrates deep into the hair structure to restore strength, hydration, and elasticity. It smooths frizz, reduces split ends, and enhances natural shine, leaving your hair soft, healthy, and visibly revitalized. Suitable for all hair types, this non-invasive treatment helps improve manageability and gives your hair a youthful, silky appearance that lasts for weeks.',
-    images: ['/images/botox1.jpg', '/images/botox2.jpg'],
+    images: ['/BotoxImage1.jpg', '/BotoxImage2.jpg'],
     video: '/videos/botox.mp4',
   },
   {

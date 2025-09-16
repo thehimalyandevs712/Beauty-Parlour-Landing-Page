@@ -1,0 +1,207 @@
+.makeup-tab {
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f8f1f4, #ffffff);
+  color: #333;
+}
+
+.makeup-tab__title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  animation: fadeIn 2s ease-in-out infinite alternate;
+}
+
+.makeup-tab__mindmap {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.mindmap-center {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #ff6f61;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  position: absolute;
+  animation: pulse 4s infinite;
+  text-align: center;
+  padding: 1rem;
+}
+
+.mindmap-node {
+  position: absolute;
+  min-width: 120px;
+  max-width: 150px;
+  padding: 0.5rem;
+  background: #fff;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 1.4;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  word-wrap: break-word;
+  animation: float 6s ease-in-out infinite;
+}
+
+.node-1 { top: 12%; left: 5%; }
+.node-2 { top: 12%; right: 5%; }
+.node-3 { bottom: 12%; left: 5%; }
+.node-4 { bottom: 12%; right: 5%; }
+
+.makeup-tab__services {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.makeup-tab__service-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  animation: float 6s ease-in-out infinite;
+}
+
+.makeup-tab__service-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.makeup-tab__media {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center; /* center horizontally */
+  align-items: center;     /* center vertically */
+}
+
+.makeup-tab__media img,
+.makeup-tab__media video {
+  width: 200px;       /* fixed width for circle */
+  height: 200px;      /* fixed height for circle */
+  border-radius: 50%; /* makes it circular */
+  object-fit: cover;  /* ensures content fills circle without distortion */
+  flex: 0 0 auto;     /* prevent flex stretching */
+  transition: transform 0.3s ease;
+}
+
+/* Optional: hover effect */
+.makeup-tab__media img:hover,
+.makeup-tab__media video:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .makeup-tab__media img,
+  .makeup-tab__media video {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .makeup-tab__media img,
+  .makeup-tab__media video {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0.7; }
+  to { opacity: 1; }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .makeup-tab {
+    padding: 1.5rem;
+  }
+
+  .makeup-tab__title {
+    font-size: 1.8rem;
+  }
+
+  .makeup-tab__mindmap {
+    min-height: 450px;
+    padding: 1rem;
+  }
+
+  .mindmap-node {
+    min-width: 110px;
+    max-width: 140px;
+    line-height: 1.3;
+    padding: 0.4rem;
+  }
+
+  .makeup-tab__media {
+    flex-direction: column;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .makeup-tab {
+    padding: 1rem;
+  }
+
+  .makeup-tab__title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .makeup-tab__mindmap {
+    min-height: 500px;
+    padding: 0.5rem;
+  }
+
+  .mindmap-center {
+    width: 100px;
+    height: 100px;
+    font-size: 0.9rem;
+  }
+
+  .mindmap-node {
+    min-width: 90px;
+    max-width: 120px;
+    line-height: 1.2;
+    padding: 0.3rem;
+    font-size: 0.85rem;
+  }
+
+  .makeup-tab__service-card {
+    padding: 1rem;
+  }
+
+  .makeup-tab__service-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .makeup-tab__media img,
+  .makeup-tab__media video {
+    flex: 1 1 100%;
+  }
+}

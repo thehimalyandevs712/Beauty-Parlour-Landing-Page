@@ -1,93 +1,76 @@
-/* src/components/SkinTab/SkinTab.css */
-
+/* Container */
 .skintab-container {
   padding: 2rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #fce4ec, #e1f5fe);
+  background: linear-gradient(135deg, #ffe6f0, #e0f7fa);
   color: #333;
 }
 
+/* Heading */
 .skintab-heading {
   text-align: center;
   font-size: 2.8rem;
   color: #d81b60;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   animation: pulse 2s infinite;
 }
 
-.skintab-services-overview {
+/* Service Showcase */
+.skintab-showcase {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.skintab-service-card {
-  background: #ffffff;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  transition: transform 0.5s, background-color 0.3s;
-  cursor: pointer;
-}
-
-.skintab-service-card:hover {
-  transform: translateY(-10px);
-  background-color: #ffe4f0;
-}
-
-.skintab-flowchart {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 1.5rem;
+  gap: 2rem;
   margin-bottom: 3rem;
 }
 
-.skintab-flow-node {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: #ffecb3;
-  padding: 1.5rem;
-  border-radius: 10px;
+.skintab-showcase-card {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: transform 0.5s, box-shadow 0.3s, background-color 0.3s;
+  cursor: pointer;
+  min-width: 220px;
   text-align: center;
-  min-width: 200px;
-  min-height: 150px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
+.skintab-showcase-card:hover {
+  transform: translateY(-15px) scale(1.05);
+  background-color: #ffe4f5;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+}
 
-.skintab-flow-node ul {
+.skintab-showcase-card ul {
   margin-top: 0.5rem;
-  list-style-type: none;
-  padding-left: 1.5rem;
+  list-style: none;
+  padding-left: 0;
+  font-size: 0.95rem;
+  color: #555;
 }
 
+/* Detailed Services */
 .skintab-detailed-services {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3rem;
 }
 
 .skintab-detailed-card {
   background: #ffffff;
-  padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  padding: 2.5rem;
+  border-radius: 25px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
   text-align: center;
-}
-/* Center the description text */
-.centered-text {
-  text-align: center;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-top: 1rem;
+  transition: transform 0.5s, box-shadow 0.3s;
 }
 
+.skintab-detailed-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
 
+/* Main Service Images */
 .skintab-images {
   display: flex;
   justify-content: center;
@@ -97,26 +80,85 @@
 }
 
 .skintab-images img {
-  width: 45%;
-  max-width: 300px;
-  border-radius: 12px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
   object-fit: cover;
-  transition: transform 0.5s;
+  transition: transform 0.5s, box-shadow 0.3s;
 }
 
 .skintab-images img:hover {
   transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Centered Text */
+.centered-text {
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-top: 1rem;
+}
+
+/* Service Types */
+.skintab-service-types {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+  border-top: 2px solid #f8bbd0;
+  padding-top: 2rem;
+}
+
+.skintab-type-card {
+  background: #fff0f5;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.4s, box-shadow 0.3s;
+  text-align: center;
+}
+
+.skintab-type-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+.skintab-type-title {
+  color: #d81b60;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+/* Circular Images inside Types */
+.skintab-type-card .skintab-images img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0.5rem;
+}
+
+/* Video Styling */
+.skintab-video {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 1rem 0;
+  object-fit: cover;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+  transition: transform 0.4s, box-shadow 0.3s;
+}
+
+.skintab-video:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.3);
 }
 
 /* Animations */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideIn {
-  from { opacity: 0; transform: translateX(-30px); }
-  to { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes zoomIn {
@@ -134,27 +176,25 @@
   animation: fadeIn 1.2s ease forwards;
 }
 
-.slide-in {
-  animation: slideIn 1.5s ease forwards;
-}
-
 .zoom-in {
   animation: zoomIn 1.5s ease forwards;
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 768px) {
-  .skintab-images img {
-    width: 90%;
-  }
-
-  .skintab-services-overview {
+  .skintab-showcase {
     flex-direction: column;
     align-items: center;
   }
 
-  .skintab-flowchart {
-    flex-direction: column;
-    align-items: center;
+  .skintab-images img,
+  .skintab-type-card .skintab-images img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .skintab-video {
+    width: 150px;
+    height: 150px;
   }
 }

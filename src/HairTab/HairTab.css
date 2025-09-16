@@ -49,10 +49,9 @@
     transform: translateX(10%);
   }
   100% {
-    transform: translateX(-60%); /* move by half because content is duplicated */
+    transform: translateX(-60%);
   }
 }
-
 
 .hair-tab-details {
   margin-top: 3rem;
@@ -74,9 +73,10 @@
 
 .hair-tab-media img,
 .hair-tab-media video {
-  max-width: 300px;
-  width: 100%;
-  border-radius: 8px;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%; /* circular form */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -148,7 +148,8 @@
 @media (max-width: 1024px) {
   .hair-tab-media img,
   .hair-tab-media video {
-    max-width: 250px;
+    width: 200px;
+    height: 200px;
   }
 }
 
@@ -160,6 +161,12 @@
 
   .hair-tab-marquee {
     animation-duration: 30s;
+  }
+
+  .hair-tab-media img,
+  .hair-tab-media video {
+    width: 180px;
+    height: 180px;
   }
 }
 
@@ -179,5 +186,11 @@
   .hair-tab-marquee-item {
     font-size: 1.2rem;
     margin-right: 2rem;
+  }
+
+  .hair-tab-media img,
+  .hair-tab-media video {
+    width: 150px;
+    height: 150px;
   }
 }

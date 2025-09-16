@@ -1,0 +1,191 @@
+/* ================== CONTAINER ================== */
+.nailstab-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #F5F6FA; /* page background */
+  color: #2D3436;
+}
+
+/* ================== HEADING ================== */
+.nailstab-heading {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  color: #6C5CE7; /* main page purple */
+  position: relative;
+}
+
+.nailstab-heading::after {
+  content: '';
+  display: block;
+  width: 70px;
+  height: 5px;
+  background: linear-gradient(90deg, #6C5CE7, #00B894); /* lavender → mint */
+  margin: 1rem auto 0;
+  border-radius: 2px;
+}
+
+/* ================== FLOWCHART / TREE ================== */
+.nailstab-tree {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+.nailstab-branch {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: branchGrow 1.5s ease-out forwards;
+}
+
+.nailstab-branch-line {
+  width: 4px;
+  height: 60px;
+  background: linear-gradient(180deg, #6C5CE7, #00B894); /* lavender → mint */
+  border-radius: 2px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
+
+.nailstab-branch-node {
+  background: linear-gradient(135deg, #6C5CE7, #00B894); /* lavender → mint gradient */
+  color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 50%;
+  min-width: 140px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  animation: nodeAppear 1.5s ease-in forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nailstab-branch-node:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.18);
+}
+
+/* FLOWCHART ANIMATIONS */
+@keyframes branchGrow {
+  0% { transform: scaleY(0); }
+  100% { transform: scaleY(1); }
+}
+
+@keyframes nodeAppear {
+  0% { opacity: 0; transform: scale(0.7); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* ================== SERVICE CARDS ================== */
+.nailstab-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.nailstab-service-card {
+  background: #FFFFFF;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+  border: 1px solid #E0E0E0;
+}
+
+.nailstab-service-card:hover {
+  transform: translateY(-12px) rotateZ(0.5deg);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+  background: #F9FAFC;
+}
+
+.nailstab-service-title {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: #6C5CE7;
+  position: relative;
+}
+
+.nailstab-service-title::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #00B894; /* mint underline */
+  margin-top: 0.5rem;
+  border-radius: 2px;
+}
+
+.nailstab-service-description {
+  font-size: 1.15rem;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+  color: #2D3436;
+}
+
+/* ================== MEDIA (IMAGES & VIDEO) ================== */
+.nailstab-media {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  animation: mediaPulse 5s ease-in-out infinite alternate;
+}
+
+.nailstab-media img,
+.nailstab-media video {
+  max-width: 320px;
+  aspect-ratio: 1 / 1; /* ensures perfect circle */
+  object-fit: cover;   /* crop the media nicely inside the circle */
+  border-radius: 50%;  /* makes it circular */
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.nailstab-media img:hover,
+.nailstab-media video:hover {
+  transform: scale(1.07);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+@keyframes mediaPulse {
+  0% { opacity: 0.9; }
+  50% { opacity: 1; }
+  100% { opacity: 0.9; }
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 992px) {
+  .nailstab-media {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nailstab-service-card {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .nailstab-heading {
+    font-size: 2rem;
+  }
+
+  .nailstab-branch-node {
+    min-width: 120px;
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  .nailstab-media img,
+  .nailstab-media video {
+    max-width: 90%;
+  }
+}
