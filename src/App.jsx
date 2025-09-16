@@ -5,7 +5,7 @@ import Home from "./Home/Home";
 import { AboutUs } from "./AboutUs/AboutUs";
 import { ContactUs } from "./ContactUs/ContactUs";
 import { HairTab } from "./HairTab/HairTab";
-import { SkinTab } from "./SkinTab/SkinTab";
+import  SkinTab  from "./SkinTab/SkinTab";
 import { NailsTab } from "./NailsTab/NailsTab";
 import { MakeupTab } from "./MakeupTab/MakeupTab";
 

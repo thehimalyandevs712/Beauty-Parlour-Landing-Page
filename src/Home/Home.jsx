@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <>
       <section className="home-container" id="home">
-        {/* Bubble background */}
+        {/* Bubble background */}  
         <div className="bubble-container">
           {[...Array(15)].map((_, i) => (
             <div key={i} className={`bubble bubble-${i + 1}`}></div>

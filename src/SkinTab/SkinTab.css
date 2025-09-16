@@ -1,123 +1,160 @@
-/* Overall container */
+/* src/components/SkinTab/SkinTab.css */
+
 .skintab-container {
-  padding: 3rem;
-  background-color: #f5f7fa;
-  font-family: 'Arial', sans-serif;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #fce4ec, #e1f5fe);
   color: #333;
 }
 
-/* Main title */
-.skintab-main-title {
+.skintab-heading {
   text-align: center;
-  font-size: 3rem;
-  color: #37474f; /* Dark Grayish Blue */
+  font-size: 2.8rem;
+  color: #d81b60;
+  margin-bottom: 2rem;
+  animation: pulse 2s infinite;
+}
+
+.skintab-services-overview {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.skintab-service-card {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.5s, background-color 0.3s;
+  cursor: pointer;
+}
+
+.skintab-service-card:hover {
+  transform: translateY(-10px);
+  background-color: #ffe4f0;
+}
+
+.skintab-flowchart {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1.5rem;
   margin-bottom: 3rem;
 }
 
-/* Main Services Grid */
-.skintab-main-services {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2.5rem;
-  margin-bottom: 4rem;
-}
-
-.skintab-main-service-card {
-  background: #607d8b; /* Muted Blue Gray */
-  color: #eceff1;
-  border-radius: 15px;
-  padding: 2rem;
-  text-align: center;
-  transition: transform 0.3s ease;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-}
-
-.skintab-main-service-card:hover {
-  transform: translateY(-10px);
-}
-
-.skintab-main-service-icon {
-  width: 80px;
-  height: 80px;
-  margin-bottom: 1rem;
-}
-
-.skintab-main-service-name {
-  font-size: 1.6rem;
-  font-weight: bold;
-}
-
-/* Detailed service cards */
-.skintab-details {
+.skintab-flow-node {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
-}
-
-.skintab-detail-card {
-  background: white;
-  border-radius: 15px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  padding: 2rem;
-}
-
-.skintab-detail-image {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
+  align-items: center;
+  justify-content: center;
+  background: #ffecb3;
+  padding: 1.5rem;
   border-radius: 10px;
-  margin-bottom: 1.5rem;
+  text-align: center;
+  min-width: 200px;
+  min-height: 150px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.skintab-detail-title {
-  font-size: 2rem;
-  color: #455a64; /* Dark Blue Gray */
-  margin-bottom: 1rem;
-}
 
-.skintab-detail-description {
-  font-size: 1.15rem;
-  color: #555;
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
-}
-
-.skintab-detail-types-heading {
-  font-size: 1.7rem;
-  color: #546e7a; /* Medium Gray Blue */
-  margin-bottom: 1rem;
-}
-
-.skintab-detail-types-list {
+.skintab-flow-node ul {
+  margin-top: 0.5rem;
+  list-style-type: none;
   padding-left: 1.5rem;
 }
 
-.skintab-detail-type-item {
-  font-size: 1.15rem;
-  margin-bottom: 1rem;
+.skintab-detailed-services {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-/* Responsive adjustments */
+.skintab-detailed-card {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  text-align: center;
+}
+/* Center the description text */
+.centered-text {
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-top: 1rem;
+}
+
+
+.skintab-images {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.skintab-images img {
+  width: 45%;
+  max-width: 300px;
+  border-radius: 12px;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.skintab-images img:hover {
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.fade-in {
+  animation: fadeIn 1.2s ease forwards;
+}
+
+.slide-in {
+  animation: slideIn 1.5s ease forwards;
+}
+
+.zoom-in {
+  animation: zoomIn 1.5s ease forwards;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-  .skintab-main-title {
-    font-size: 2.5rem;
+  .skintab-images img {
+    width: 90%;
   }
 
-  .skintab-main-service-icon {
-    width: 60px;
-    height: 60px;
+  .skintab-services-overview {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .skintab-detail-image {
-    height: 200px;
-  }
-
-  .skintab-detail-title {
-    font-size: 1.7rem;
-  }
-
-  .skintab-detail-types-heading {
-    font-size: 1.4rem;
+  .skintab-flowchart {
+    flex-direction: column;
+    align-items: center;
   }
 }

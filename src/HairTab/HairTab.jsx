@@ -1,103 +1,83 @@
+// src/components/HairTab/HairTab.jsx
 import React from 'react';
-import '../HairTab/HairTab.css';
+import './HairTab.css';
 
-export const HairTab=()=> {
-  const services = [
-    { name: 'Smoothing', description: 'Transform frizzy, unmanageable hair into a sleek, smooth masterpiece with our professional smoothing treatment.', image: 'https://placehold.co/400x300/F0F9FF/0C4A6E?text=Smoothing' },
-    { name: 'Botox & Nano Plastica', description: 'Revitalize and repair your hair from the inside out, restoring its health, strength, and natural shine.', image: 'https://placehold.co/400x300/F0FDF4/15803D?text=Botox' },
-    { name: 'Rebonding', description: 'Permanently straighten your hair for a poker-straight, glossy finish that lasts for months.', image: 'https://placehold.co/400x300/FEF2F2/991B1B?text=Rebonding' },
-    { name: 'Hair Color & Highlights', description: 'From a subtle refresh to a bold new look, our colorists will help you find the perfect shade.', image: 'https://placehold.co/400x300/FDE68A/B45309?text=Color' },
-    { name: 'Hair Spa', description: 'A relaxing and nourishing treatment to deep-condition your hair and scalp, leaving them healthy and hydrated.', image: 'https://placehold.co/400x300/ECFEFF/164E63?text=Hair+Spa' },
-    { name: 'Hair Creatin', description: 'Strengthen and rebuild hair fibers, preventing breakage and promoting healthy hair growth.', image: 'https://placehold.co/400x300/FFE4E6/BE185D?text=Creatin' },
-    { name: 'Hair Styling', description: 'Get the perfect look for any occasion, from elegant updos to casual, bouncy blowouts.', image: 'https://placehold.co/400x300/F5F5F4/57534E?text=Styling' },
-    { name: 'Bridal Styling', description: 'Look stunning on your special day with custom bridal hair designs that last all day and night.', image: 'https://placehold.co/400x300/F0E6F0/A020F0?text=Bridal' },
-    { name: 'Men\'s Grooming', description: 'Professional cuts, styling, and treatments specifically tailored for men’s hair.', image: 'https://placehold.co/400x300/E5F8E5/48BB78?text=Grooming' },
-  ];
+const services = [
+  {
+    name: 'Smoothing Service',
+    description: 'Our professional hair smoothing treatment is designed to effectively reduce frizz, eliminate unruly hair, and enhance natural shine. It helps to make your hair soft, silky, and more manageable, providing a sleek and polished look that lasts for weeks. Ideal for all hair types, this treatment works by nourishing and strengthening hair from root to tip, leaving it smooth, healthy, and easier to style every day. Perfect for anyone looking to tame their hair and achieve a smooth, glossy finish.',
+    images: ['/images/smoothing1.jpg', '/images/smoothing2.jpg'],
+    video: '/videos/smoothing.mp4',
+  },
+  {
+    name: 'Rebonding Service',
+    description: 'Our expert hair rebonding service offers a long-lasting solution to transform curly, wavy, or frizzy hair into perfectly straight, smooth strands. Using advanced chemical techniques, the treatment restructures the hair bonds to achieve a sleek, shiny, and ultra-straight finish that stays intact for several months. It not only makes your hair more manageable but also enhances its strength and overall health. Ideal for those seeking effortless styling and a polished look every day.',
+    images: ['/images/rebonding1.jpg', '/images/rebonding2.jpg'],
+    video: '/videos/rebonding.mp4',
+  },
+  {
+    name: 'Botox Nano Plastica Hair Service',
+    description: 'Our advanced Botox Nano Plastica Hair Treatment is a revolutionary solution designed to deeply repair and rejuvenate damaged, brittle, or lifeless hair. Combining the power of Botox and Nano Plastica technology, this treatment penetrates deep into the hair structure to restore strength, hydration, and elasticity. It smooths frizz, reduces split ends, and enhances natural shine, leaving your hair soft, healthy, and visibly revitalized. Suitable for all hair types, this non-invasive treatment helps improve manageability and gives your hair a youthful, silky appearance that lasts for weeks.',
+    images: ['/images/botox1.jpg', '/images/botox2.jpg'],
+    video: '/videos/botox.mp4',
+  },
+  {
+    name: 'Hair Color Service',
+    description: 'Our Professional Hair Color Service offers expert hair coloring solutions tailored to your individual style and personality. Whether you want a subtle shade enhancement, vibrant new color, highlights, or a full transformation, we use high-quality, salon-grade products to ensure long-lasting, even, and stunning results. Our experienced colorists carefully analyze your hair type and condition to select the perfect formula, while maintaining the health and integrity of your hair. Suitable for all hair types, this service provides a radiant, glossy finish and boosts your confidence with every shade.',
+    images: ['/images/haircolor1.jpg', '/images/haircolor2.jpg'],
+    video: '/videos/haircolor.mp4',
+  },
+  {
+    name: 'Rejuvenating Hair Spa Treatment',
+    description: 'Our Rejuvenating Hair Spa Experience is designed to deeply nourish, hydrate, and restore your hair’s natural vitality. Using a blend of high-quality, salon-grade products and specialized techniques, this treatment helps repair damaged strands, reduce dryness, and improve scalp health. It promotes stronger, softer, and shinier hair while relieving stress and tension through a relaxing scalp massage. Suitable for all hair types, the hair spa provides a soothing and revitalizing experience, leaving your hair healthy, manageable, and full of life.',
+    images: ['/images/hairspa1.jpg', '/images/hairspa2.jpg'],
+    video: '/videos/hairspa.mp4',
+  },
+  {
+    name: 'Keratin Hair Treatment',
+    description: 'Our Keratin Hair Treatment is a professional solution designed to smooth, strengthen, and restore damaged or frizzy hair by infusing it with pure keratin proteins. This advanced treatment works by filling in gaps in the hair’s natural structure, reducing frizz, enhancing shine, and improving manageability. Ideal for all hair types, it helps make your hair softer, silkier, and more resilient to everyday damage caused by heat styling, pollution, and chemical treatments. Enjoy long-lasting smoothness, easier styling, and a healthier-looking finish that radiates confidence.',
+    images: ['/images/creatin1.jpg', '/images/creatin2.jpg'],
+    video: '/videos/creatin.mp4',
+  },
+  {
+    name: 'Hair Styling Service',
+    description: 'Our Professional Hair Styling Service offers expert styling tailored to your unique look and occasion. Whether you want a sleek everyday style, voluminous blowout, trendy curls, elegant updo, or a modern haircut, our skilled stylists use precision techniques and high-quality products to bring your vision to life. Perfect for special events, parties, or simply refreshing your everyday style, this service ensures your hair looks polished, fashionable, and full of personality. Suitable for all hair types, we focus on enhancing your natural beauty while providing long-lasting results.',
+    images: ['/images/styling1.jpg', '/images/styling2.jpg'],
+    video: '/videos/styling.mp4',
+  },
+];
 
-  const testimonials = [
-    { name: 'Sarah J.', quote: 'My hair has never looked better! The Rebonding service was fantastic and the staff were so professional.', image: 'https://placehold.co/100x100/A0E7E5/000000?text=SJ' },
-    { name: 'Mark D.', quote: 'I love my new Hair Styling! It was exactly what I wanted for my big event. I highly recommend them.', image: 'https://placehold.co/100x100/F4D03F/000000?text=MD' },
-    { name: 'Lisa K.', quote: 'The Hair Spa was a truly relaxing experience. My scalp feels so clean and my hair feels incredibly soft.', image: 'https://placehold.co/100x100/A0AEC0/000000?text=LK' },
-  ];
+export const HairTab = () => (
+  <section className="hair-tab-container">
+    <h1 className="hair-tab-heading">
+      From Cuts to Color – Comprehensive Hair Solutions
+    </h1>
 
-  return (
-    <div className="app-container">
-
-      {/* Main Header */}
-      <header className="header">
-        <h1 className="header-title">
-          Discover Your Perfect Look
-        </h1>
-        <p className="header-subtitle">
-          Explore our full range of professional hair services designed just for you.
-        </p>
-
-        {/* Continuous Scrolling Animation (Top) */}
-        <div className="scroll-container-top">
-          <div className="scroll-text">
-            {services.map((service, index) => (
-              <span key={index}>{service.name}</span>
-            ))}
-            {/* Duplicate for seamless loop */}
-            {services.map((service, index) => (
-              <span key={`dup-${index}`}>{service.name}</span>
-            ))}
+    <div className="hair-tab-marquee-wrapper">
+      <div className="hair-tab-marquee">
+        {services.map((service, idx) => (
+          <div key={idx} className="hair-tab-marquee-item">
+            {service.name}
           </div>
-        </div>
-      </header>
-
-      {/* Services Section */}
-      <main className="main-container">
-        <div className="services-grid">
-          {services.map((service, index) => (
-            <div key={index} className="service-card">
-              <img 
-                src={service.image} 
-                alt={service.name} 
-                className="service-image" 
-              />
-              <h2 className="service-name">{service.name}</h2>
-              <p className="service-description">{service.description}</p>
-            </div>
-          ))}
-        </div>
-      </main>
-
-      {/* Testimonials Section */}
-      <section className="testimonial-section">
-        <h2 className="testimonial-header">
-          What Our Clients Say
-        </h2>
-        <div className="testimonial-grid">
-          {testimonials.map((testimonial, index) => (
-            <div key={index} className="testimonial-card">
-              <div className="testimonial-header-flex">
-                <img 
-                  src={testimonial.image} 
-                  alt={testimonial.name} 
-                  className="testimonial-image" 
-                />
-                <h3 className="testimonial-name">{testimonial.name}</h3>
-              </div>
-              <p className="testimonial-quote">
-                "{testimonial.quote}"
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Continuous Scrolling Animation (Bottom) */}
-      <div className="scroll-container-bottom">
-        <div className="scroll-text-reverse">
-          {[...services, ...testimonials].map((item, index) => (
-            <span key={index}>{item.name}</span>
-          ))}
-          {[...services, ...testimonials].map((item, index) => (
-            <span key={`dup-${index}`}>{item.name}</span>
-          ))}
-        </div>
+        ))}
       </div>
     </div>
-  );
-}
+
+    <div className="hair-tab-details">
+      {services.map((service, idx) => (
+        <div key={idx} className="hair-tab-service">
+          <div className="hair-tab-media">
+            <img src={service.images[0]} alt={`${service.name} 1`} />
+            <img src={service.images[1]} alt={`${service.name} 2`} />
+            <video controls>
+              <source src={service.video} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <h2 className="hair-tab-service-name">{service.name}</h2>
+          <p className="hair-tab-service-description">{service.description}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+);
